@@ -11,11 +11,12 @@ Purpose: set baseline configration with common best practices
 
 ## Database Maintenance
 Maintenance Solution is based on [Ola Hallengren's SQL Server Backup, Integrity Check, and Index and Statistics Maintenance](https://ola.hallengren.com/).
-By default all the maintenance objects (Log-Table, Stored procedures, etc.) are stored in master-database. But I prefer to have it on a dedicated database. Let's call it "**MaintenanceDB**". Therefore you need to adjust line 22 in **MaintenanceSolution.sql** `USE [master] -- Specify the database in which the objects will be created.` to `USE [MaintenanceDB] -- Specify the database in which the objects will be created.`
+By default all the maintenance objects (Log-Table, Stored procedures, etc.) are stored in master-database. But I prefer to have it on a dedicated database. Let's call it "**MaintenanceDB**". Therefore you need to adjust line 22 in [**MaintenanceSolution.sql**](https://github.com/olahallengren/sql-server-maintenance-solution/blob/master/MaintenanceSolution.sql#L22) `USE [master] -- Specify the database in which the objects will be created.` to `USE [MaintenanceDB] -- Specify the database in which the objects will be created.`
+Also we create our own jobs, so change line 26 in [**MaintenanceSolution.sql**](https://github.com/olahallengren/sql-server-maintenance-solution/blob/master/MaintenanceSolution.sql#L26) from Y to N.
 Execute scripts in the following order:
 
 1. [200-CreateMaintenanceDB.sql](200-CreateMaintenanceDB.sql)
-2. MaintenanceSolution.sql
+2. [MaintenanceSolution.sql](https://github.com/olahallengren/sql-server-maintenance-solution/blob/master/MaintenanceSolution.sql)
 3. [220-CreateMaintenaceJobs.sql](220-CreateMaintenaceJobs.sql)
 
 ## Database Mailing
