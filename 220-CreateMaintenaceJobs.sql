@@ -2,7 +2,7 @@
 ############################################################
 ## 220-CreateMaintenaceJobs.sql
 ##
-## Purpose: set baseline configration with common best practices
+## Purpose: create maintenace jobs with schedules
 ##
 ############################################################
 */
