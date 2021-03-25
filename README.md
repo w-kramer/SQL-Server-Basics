@@ -20,6 +20,6 @@ Execute scripts in the following order:
 
 ## Database Mailing
 
-[300-SetupDatabaseMail.sql](300-SetupDatabaseMail.sql)
-[310-SetupSeverityAlerts.sql](310-SetupSeverityAlerts.sql)
-[320-SetupMaintenanceJobsAlerts.sql](320-SetupMaintenanceJobsAlerts.sql)
+1. [300-SetupDatabaseMail.sql](300-SetupDatabaseMail.sql)
+2. [310-SetupSeverityAlerts.sql](310-SetupSeverityAlerts.sql)
+3. [320-SetupMaintenanceJobsAlerts.sql](320-SetupMaintenanceJobsAlerts.sql)
