@@ -2,7 +2,7 @@
 ############################################################
 ## 310-SetupSeverityAlerts.sql
 ##
-## Purpose: set up database mail
+## Purpose: set mail alerting for agent jobs
 ##
 ############################################################
 */
