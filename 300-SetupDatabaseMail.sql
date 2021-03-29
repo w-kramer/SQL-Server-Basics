@@ -11,12 +11,12 @@ DECLARE @servername				sysname
 	  , @servicename			sysname
 	  , @account_name			sysname
 	  , @profile_name			sysname
-	  , @SMTP_servername		sysname
+	  , @SMTP_servername			sysname
 	  , @operator_name			sysname
 	  , @email_address			NVARCHAR(128)
 	  , @display_name			NVARCHAR(128)
-	  , @profile_email_address	NVARCHAR(128)
-	  , @operator_email_address NVARCHAR(128);
+	  , @profile_email_address		NVARCHAR(128)
+	  , @operator_email_address 		NVARCHAR(128);
 
 SELECT	@servername = @@SERVERNAME;
 SELECT	@servicename = @@SERVICENAME;
