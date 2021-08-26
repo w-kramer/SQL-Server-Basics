@@ -24,3 +24,28 @@ Execute scripts in the following order:
 1. [300-SetupDatabaseMail.sql](300-SetupDatabaseMail.sql)
 2. [310-SetupSeverityAlerts.sql](310-SetupSeverityAlerts.sql)
 3. [320-SetupMaintenanceJobsAlerts.sql](320-SetupMaintenanceJobsAlerts.sql)
+
+# Post migration tasks
+After restoring a database to your new server, you should perform some tasks. 
+
+Trace flag 1117 is gone in current SQL Server versions. Now you set it up on database and file group level.
+
+`ALTER DATABASE [dbname] MODIFY FILEGROUP [PRIMARY] AUTOGROW_ALL_FILES;`
+
+Databases should have checksum as page verify setting.
+
+`ALTER DATABASE [dbname] SET PAGE_VERIFY CHECKSUM;`
+
+Set the recovery model of the database according to your needs. IMHO production databases should always set to FULL recovery model.
+
+```
+ALTER DATABASE [dbname] SET RECOVERY FULL;
+ALTER DATABASE [dbname] SET RECOVERY SIMPLE;
+```
+
+I like to have the Query Store feature enabled.
+
+```
+ALTER DATABASE [dbname] SET QUERY_STORE = ON;
+ALTER DATABASE [dbname] SET QUERY_STORE (OPERATION_MODE = READ_WRITE, MAX_STORAGE_SIZE_MB = 2048);
+```
