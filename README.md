@@ -49,3 +49,8 @@ I like to have the Query Store feature enabled.
 ALTER DATABASE [dbname] SET QUERY_STORE = ON;
 ALTER DATABASE [dbname] SET QUERY_STORE (OPERATION_MODE = READ_WRITE, MAX_STORAGE_SIZE_MB = 2048);
 ```
+
+Also the database should be check for consistency
+
+`DBCC CHECKDB ([dbname])`
+
